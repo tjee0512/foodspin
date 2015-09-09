@@ -2,6 +2,9 @@
   font-family: 'EXO 2', sans-serif;
 }
 
+.container-fluid {
+  padding: 10px 120px;
+}
 /*****************
 NAVBAR
 *****************/
@@ -434,10 +437,10 @@ FOOTER
 *********************/
 
 footer {
-  background-color: #89bd46;
+  /*background-color: #89bd46;*/
   text-align: center;
-  padding: 2% 5%;
-  border: none;
+  /*padding: 2% 5%;*/
+  /*border: none;*/
   background-size: cover;
- /* box-shadow: -1px -1px -5px #222;*/
+  /*box-shadow: -1px -1px -5px #222;*/
 }
