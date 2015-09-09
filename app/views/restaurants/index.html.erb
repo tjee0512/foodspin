@@ -24,13 +24,13 @@
   </div>
 </div>
 
-<p class="user-prompt">Still cant find a place to eat? Register and account and create your own favorite list!</p>
+<p class="user-prompt">Still cant find a place to eat? Register an account and create your own favorite list!</p>
 <br>
 
 <ul class="user-auth">
   <% if user_signed_in? %>
-    <li><%= link_to "Edit Profile", edit_user_registration_path %></li>
-    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete %></li>
+    <li><%= link_to "Edit Profile", edit_user_registration_path, class: "btn btn-link" %></li>
+    <li><%= link_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-link" %></li>
   <% else %>
   <li><%= link_to "Sign up", new_user_registration_path, class: "action-button shadow animate blue" %></li>
   <li><%= link_to "Sign in", new_user_session_path, class: "action-button shadow animate red" %></li>
@@ -61,13 +61,10 @@
       <tbody>
         <% @restaurants.each do |restaurant| %>
           <tr>
-            <td><%= restaurant.name %></td>
+            <td><%= link_to restaurant.name, restaurant %></td>
             <td><%= restaurant.address %></td>
             <td><%= restaurant.phone %></td>
             <td><%= link_to restaurant.website, restaurant.website, target: "_blank" %></td>
-            <td><%= link_to 'Show', restaurant, class: "btn btn-link" %></td>
-            <td><%= link_to 'Edit', edit_restaurant_path(restaurant), class: "btn btn-link" %></td>
-            <td><%= link_to 'Destroy', restaurant, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link" %></td>
           </tr>
         <% end %>
       </tbody>
@@ -80,5 +77,5 @@
 
 </div>
 
-<%= link_to 'Add a new place', new_restaurant_path %>
+<%= link_to 'Add a new place', new_restaurant_path, class: "btn btn-primary" %>
 <% end %>
