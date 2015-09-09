@@ -69,7 +69,7 @@ RESTAURANT INFO
 *********************/
 
 #info-wrap {
-    margin: 10px auto 20px;
+    margin: 20px auto 20px;
     width: 400px;
     border: 1px solid rgba(0,0,1,.1);
     box-shadow: 0 15px 20px -12px #222;
@@ -427,4 +427,17 @@ SIGNUP LOGIN
 
 .user-auth li {
   display: inline-block;
+}
+
+/*********************
+FOOTER
+*********************/
+
+footer {
+  background-color: #89bd46;
+  text-align: center;
+  padding: 2% 5%;
+  border: none;
+  background-size: cover;
+ /* box-shadow: -1px -1px -5px #222;*/
 }
