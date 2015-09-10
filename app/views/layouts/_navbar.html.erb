@@ -3,7 +3,9 @@
       <a class="main-title" href="/">EatWhatLater.com</a>
       <h2 class="subtitle">Let the spinner decide!</h2>
       <br>
+      <% if user_signed_in? %>
       <p class="welcome"><%= "Welcome! #{current_user.first_name.capitalize}" %></p>
+      <% end %>
   </header>
 
 
