@@ -16,6 +16,12 @@
     <%= f.label :name %><br>
     <%= f.text_field :name, class: "form-control", placeholder: "ABC Cafe" %>
   </div>
+
+  <div class="form-group">
+    <%= f.label :category_id %><br>
+    <%= f.collection_select :category_id, Category.all, :id, :name, {prompt: "Choose an area"}, {class: "btn btn-default dropdown-toggle"} %>
+  </div>
+
   <div class="form-group">
     <%= f.label :address %><br>
     <%= f.text_field :address, class: "form-control", placeholder: "123 Jalan Kawan, Damansara Perdana, 47820 Petaling Jaya" %>

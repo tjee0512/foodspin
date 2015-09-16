@@ -26,3 +26,7 @@ gem "fog"
 gem "figaro"
 gem "mini_magick"
 gem 'devise'
+gem 'will_paginate', '~> 3.0'
+gem 'will_paginate-bootstrap'
+gem 'randumb'
+gem 'gon'

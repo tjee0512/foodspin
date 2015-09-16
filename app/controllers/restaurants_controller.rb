@@ -1,10 +1,27 @@
 class RestaurantsController < ApplicationController
   before_action :set_restaurant, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :check_user, except: [:index, :show]
   # GET /restaurants
   # GET /restaurants.json
 
+  def check_user
+    unless current_user.admin?
+        redirect_to root_url, alert: "Sorry, only admins can do that!"
+    end
+  end
+
   def index
-    @restaurants = Restaurant.all
+    if params[:category].blank?
+    @restaurants = Restaurant.all.order("created_at DESC").paginate(:page => params[:page])
+    else
+      @category_id = Category.find_by(name: params[:category]).id
+      @restaurants = Restaurant.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page])
+    end
+
+    @random_restaurant = Restaurant.find(rand(Restaurant.count) + 1)
+    gon.random_restaurant = @random_restaurant
+    # @restaurants = Restaurant.all
   end
 
   # GET /restaurants/1
@@ -76,6 +93,6 @@ class RestaurantsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def restaurant_params
-      params.require(:restaurant).permit(:name, :address, :phone, :website, :image)
+      params.require(:restaurant).permit(:name, :category_id, :address, :phone, :website, :image)
     end
 end

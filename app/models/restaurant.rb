@@ -6,4 +6,6 @@ class Restaurant < ActiveRecord::Base
   validates :name, :address, :phone, presence: true
   validates :website, format: { with: /\Ahttps?:\/\/.*\z/,
   message: "must start with http:// or https://" }
+
+  belongs_to :category
 end
