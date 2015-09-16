@@ -19,8 +19,8 @@ class RestaurantsController < ApplicationController
       @restaurants = Restaurant.where(category_id: @category_id).order("created_at DESC").paginate(:page => params[:page])
     end
 
-    @random_restaurant = Restaurant.find(rand(Restaurant.count) + 1)
-    gon.random_restaurant = @random_restaurant
+    # @random_restaurant = Restaurant.find(rand(Restaurant.count) + 1)
+    # gon.random_restaurant = @random_restaurant
     # @restaurants = Restaurant.all
   end
 
