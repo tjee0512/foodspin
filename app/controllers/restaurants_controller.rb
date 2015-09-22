@@ -30,8 +30,6 @@ class RestaurantsController < ApplicationController
 
   @random_restaurant_name = @random_restaurant.name
 
-  gon.watch.restaurant_name = @random_restaurant_name
-
     # @restaurants = Restaurant.all
 
 
