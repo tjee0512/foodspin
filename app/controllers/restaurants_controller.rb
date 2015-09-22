@@ -21,10 +21,10 @@ class RestaurantsController < ApplicationController
 
     random_id = rand(Restaurant.count)
 
-    if random_id == 0
-      random_id += 1
-      random_id
-    end
+    # if random_id == 0
+    #   random_id += 1
+    #   random_id
+    # end
 
   @random_restaurant = Restaurant.find(random_id)
 
