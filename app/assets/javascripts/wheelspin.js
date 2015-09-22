@@ -11,8 +11,6 @@ $(document).ready(function() {
     //add 1 every click
     clicks++;
 
-  document.getElementById("random").innerHTML = console.dir(gon.random_restaurant);
-
     /*multiply the degree by number of clicks
     generate random number between 1 - 360,
     then add to the new degree*/
@@ -60,6 +58,11 @@ $(document).ready(function() {
       noY = t.offset().top;
 
     });
+
+    // $("random").text("Hello World");
+
+  // document.getElementById("random").innerHTML = console.log(gon.restaurant_name);
+
   });
 
 }); //DOCUMENT READY

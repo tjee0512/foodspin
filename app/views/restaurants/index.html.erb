@@ -7,7 +7,7 @@
       </span>
     </div>
         <p id="random">
-        Spin the wheel for a random eating place
+        <%= @random_restaurant_name %>
         </p>
         <center><button class="more-details">More Details</button></center>
     </div>
@@ -72,9 +72,15 @@
         <% @restaurants.each do |restaurant| %>
         <article class="white-panel"><img src="http://i.imgur.com/sDLIAZD.png" alt="">
             <h3><%= link_to restaurant.name, restaurant %></h2>
-            <p><%= link_to restaurant.website, restaurant.website, target: "_blank" %></p>
+            <p class="info-title">Address</p>
+            <hr>
             <p><%= restaurant.address %></p>
+            <p class="info-title">Phone</p>
+            <hr>
             <p><%= tel_to restaurant.phone %></p>
+            <p class="info-title">Website</p>
+            <hr>
+            <p><%= link_to restaurant.website, restaurant.website, target: "_blank" %></p>
         </article>
         <% end %>
     </section>

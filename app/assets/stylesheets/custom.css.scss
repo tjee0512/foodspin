@@ -13,10 +13,11 @@ article {
   width: 100%;
 }
 img {
-  width: 100%;
+  /*width: 100%;*/
   max-width: 100%;
   height: auto;
 }
+
 .white-panel {
   position: absolute;
   background: white;
@@ -40,6 +41,12 @@ stylize any heading tags withing white-panel below
   -moz-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+.info-title {
+  color: grey;
+  font-size: 18px;
+  margin-bottom: -20px;
 }
 
 .main-title, .subtitle {
