@@ -70,7 +70,8 @@
   <div class="row">
     <section id="pinBoot">
         <% @restaurants.each do |restaurant| %>
-        <article class="white-panel"><img src="http://i.imgur.com/sDLIAZD.png" alt="">
+        <article class="white-panel">
+        <img class="main-img"><%= image_tag restaurant.image_url %></img>
             <h3><%= link_to restaurant.name, restaurant %></h2>
             <p class="info-title">Address</p>
             <hr>
